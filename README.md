@@ -22,7 +22,7 @@ pod 'CPSUnsplashViewController'
 
 ## Author
 
-Chad Podoski, chad@hobnob.io
+Chad Podoski, chadpod@me.com
 
 ## License
 

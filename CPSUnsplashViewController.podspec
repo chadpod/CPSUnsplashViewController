@@ -9,34 +9,24 @@
 Pod::Spec.new do |s|
   s.name             = 'CPSUnsplashViewController'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CPSUnsplashViewController.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.summary          = 'Unsplash Image Search'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Image search powered by the Unsplash API, with optional search keyword cloud and related tags support
                        DESC
 
-  s.homepage         = 'https://github.com/Chad Podoski/CPSUnsplashViewController'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/chadpod/CPSUnsplashViewController'
+  s.screenshots     = 'github.com/chadpod/CPSUnsplashViewController/Example/screenshots/unsplash-photo-grid.jpg', 'github.com/chadpod/CPSUnsplashViewController/Example/screenshots/unsplash-keyword-cloud.jpg'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Chad Podoski' => 'chad@hobnob.io' }
-  s.source           = { :git => 'https://github.com/Chad Podoski/CPSUnsplashViewController.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Chad Podoski' => 'chadpod@me.com' }
+  s.source           = { :git => 'https://github.com/chadpod/CPSUnsplashViewController.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/chadpod'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'CPSUnsplashViewController/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'CPSUnsplashViewController' => ['CPSUnsplashViewController/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  s.dependency 'IGListKit'
+  s.dependency 'DBSphereTagCloud'
 end

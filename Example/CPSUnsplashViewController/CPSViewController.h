@@ -10,4 +10,7 @@
 
 @interface CPSViewController : UIViewController
 
+- (IBAction)presentUnsplashSearch;
+- (IBAction)presentUnsplashSearchWithoutDefault;
+
 @end
