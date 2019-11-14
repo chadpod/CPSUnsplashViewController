@@ -9,7 +9,7 @@
 #import "CPSViewController.h"
 #import "CPSUnsplashViewController.h"
 
-@interface CPSViewController () <CPSSearchViewControllerDelegate>
+@interface CPSViewController () <CPSUnsplashViewControllerDelegate>
 
 @end
 

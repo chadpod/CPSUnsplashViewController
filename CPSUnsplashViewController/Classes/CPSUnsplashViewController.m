@@ -80,7 +80,7 @@
 
 @implementation CPSUnsplashViewController
 
-+ (instancetype)newWithClientId:(NSString *)clientId delegate:(id<CPSSearchViewControllerDelegate>)delegate;
++ (instancetype)newWithClientId:(NSString *)clientId delegate:(id<CPSUnsplashViewControllerDelegate>)delegate;
 {
     CPSUnsplashViewController *viewController = [CPSUnsplashViewController new];
     viewController.clientId = clientId;

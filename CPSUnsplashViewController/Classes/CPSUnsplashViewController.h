@@ -33,7 +33,7 @@
 
 @class CPSUnsplashViewController;
 
-@protocol CPSSearchViewControllerDelegate <NSObject>
+@protocol CPSUnsplashViewControllerDelegate <NSObject>
 
 @optional
 
@@ -44,7 +44,7 @@
 
 @interface CPSUnsplashViewController : UIViewController <IGListAdapterDataSource>
 
-@property (nonatomic, weak) id<CPSSearchViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<CPSUnsplashViewControllerDelegate> delegate;
 @property (nonatomic) NSArray <CPSConfigurationItem*> *configuration;
 @property (nonatomic) UIFont *font;
 @property (nonatomic) UIColor *tintColor;
@@ -53,7 +53,7 @@
 @property (nonatomic) CGSize cropAspectRatio;
 @property (nonatomic) NSString *selectedImageId;
 
-+ (instancetype)newWithClientId:(NSString *)clientId delegate:(id<CPSSearchViewControllerDelegate>)delegate;
++ (instancetype)newWithClientId:(NSString *)clientId delegate:(id<CPSUnsplashViewControllerDelegate>)delegate;
 
 @end
 
