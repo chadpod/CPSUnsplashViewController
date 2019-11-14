@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'CPSUnsplashViewController_Example' do
+  pod 'CPSUnsplashViewController', :path => '../'
+
+  target 'CPSUnsplashViewController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
