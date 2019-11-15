@@ -36,6 +36,12 @@ Chad Podoski, chadpod@me.com
 
 * Add optional multiple image select support
 
+## Dependencies
+
+[IGLiskit](https://github.com/Instagram/IGListKit)
+
+[DBSphereTagCloud](https://github.com/dongxinb/DBSphereTagCloud)
+
 ## License
 
 CPSUnsplashViewController is available under the MIT license. See the LICENSE file for more info.
