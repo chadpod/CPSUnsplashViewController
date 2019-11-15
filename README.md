@@ -30,7 +30,7 @@ pod 'CPSUnsplashViewController'
 
 ## Author
 
-Chad Podoski, chadpod@me.com
+Chad Podoski, [@chadpod](http://twitter.com/chadpod)
 
 ## Todo
 
