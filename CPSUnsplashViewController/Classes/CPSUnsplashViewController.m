@@ -182,14 +182,14 @@
 }
 
 - (void)dismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [(self.navigationController ?: self) dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)save {
     if ([self.delegate respondsToSelector:@selector(unsplashViewController:didSelectImage:)])
         [self.delegate unsplashViewController:self didSelectImage:self.selectedImage];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [(self.navigationController ?: self) dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
