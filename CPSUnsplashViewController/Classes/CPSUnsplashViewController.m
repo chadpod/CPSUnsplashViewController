@@ -93,6 +93,13 @@
     return viewController;
 }
 
+- (void)dealloc {
+    self.searchController.searchResultsUpdater = nil;
+    self.searchController.searchBar.delegate = nil;
+    self.searchController.delegate = nil;
+    self.searchController = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
