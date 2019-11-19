@@ -25,16 +25,73 @@ CPSUnsplashViewController is available through [CocoaPods](https://cocoapods.org
 it, simply add the following line to your Podfile (not published yet):
 
 ```ruby
-pod 'CPSUnsplashViewController'
+pod 'CPSUnsplashViewController', :git => "https://github.com/chadpod/CPSUnsplashViewController.git"
+```
+
+## Usage
+
+```
+CPSUnsplashViewController *unsplashViewController = [CPSUnsplashViewController newWithClientId:@"<YOUR_USPLASH_API_KEY>" delegate:self];
+unsplashViewController.backgroundColor = [UIColor whiteColor];
+unsplashViewController.cropAspectRatio = CGSizeMake(320.f, 568.f);
+
+UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:self.unsplashViewController];
+viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+[self presentViewController:viewController animated:YES completion:nil];
+```
+
+### Optional Configuration
+
+```
+NSMutableArray *unsplashConfiguration = @[
+        [CPSConfigurationItem newWithTitle:@"Surfing"
+                                searchTerm:@"surfing"
+                               relatedTags:@[@"Hawaii", @"Tahiti", @"Indonesia", @"Australia"]
+                                 configure:nil],
+        [CPSConfigurationItem newWithTitle:@"Bouldering"
+                                searchTerm:@"bouldering"
+                               relatedTags:@[@"Bishop", @"Squamish", @"Hueco", @"Joshua Tree", @"Yosemite"]
+                                 configure:nil],
+        [CPSConfigurationItem newWithTitle:@"Snowboarding"
+                                searchTerm:@"snowboarding"
+                               relatedTags:@[@"Whistler", @"Tahoe", @"Breckenridge", @"Vail", @"Jackson Hole"]
+                                 configure:nil],
+        [CPSConfigurationItem newWithTitle:@"Hawaii"
+                                searchTerm:@"hawaii"
+                               relatedTags:@[@"Oahu", @"Kauai", @"Big Island", @"Maui", @"Lanai"]
+                                 configure:nil],
+        [CPSConfigurationItem newWithTitle:@"Nature"
+                                searchTerm:@"nature"
+                               relatedTags:@[@"Forest", @"Ocean", @"Beach", @"Mountain", @"Desert", @"Everglades", @"River"]
+                                 configure:nil],
+        [CPSConfigurationItem newWithTitle:@"Nintendo"
+                                searchTerm:@"nintendo"
+                               relatedTags:@[@"Mario", @"Zelda"]
+                                 configure:nil],
+        [CPSConfigurationItem newWithTitle:@"Wallpaper"
+                                searchTerm:@"wallpaper"
+                               relatedTags:@[@"iOS", @"Android", @"Nature", @"Bright", @"Dark"]
+                                 configure:nil]].mutableCopy;
+                                 
+[unsplashConfiguration insertObject:[CPSConfigurationItem newWithTitle:@"Phone Wallpapers"
+                                                            searchTerm:@"collections/343012/photos"
+                                                           relatedTags:nil
+                                                             configure:^(CPSConfigurationItem * _Nonnull item) {
+    item.isDefault = YES;
+    item.hideFromTagCloud = YES;
+}] atIndex:0];
+
+unsplashViewController.configuration = unsplashConfiguration;
 ```
 
 ## Author
 
 Chad Podoski, [@chadpod](http://twitter.com/chadpod)
 
-## Todo
+## Apps
 
-* Add optional multiple image select support
+[Hobnob](https://hobnob.io)
 
 ## Dependencies
 
@@ -45,3 +102,7 @@ Chad Podoski, [@chadpod](http://twitter.com/chadpod)
 ## License
 
 CPSUnsplashViewController is available under the MIT license. See the LICENSE file for more info.
+
+## Todo
+
+* Add optional multiple image select support
