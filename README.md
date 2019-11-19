@@ -31,14 +31,31 @@ pod 'CPSUnsplashViewController', :git => "https://github.com/chadpod/CPSUnsplash
 ## Usage
 
 ```
-CPSUnsplashViewController *unsplashViewController = [CPSUnsplashViewController newWithClientId:@"<YOUR_USPLASH_API_KEY>" delegate:self];
-unsplashViewController.backgroundColor = [UIColor whiteColor];
-unsplashViewController.cropAspectRatio = CGSizeMake(320.f, 568.f);
+- (void)showUnsplashSearch 
+{
+  CPSUnsplashViewController *unsplashViewController = [CPSUnsplashViewController newWithClientId:@"<YOUR_USPLASH_API_KEY>" delegate:self];
+  unsplashViewController.backgroundColor = [UIColor whiteColor];
+  unsplashViewController.cropAspectRatio = CGSizeMake(320.f, 568.f);
 
-UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:self.unsplashViewController];
-viewController.modalPresentationStyle = UIModalPresentationFullScreen;
-    
-[self presentViewController:viewController animated:YES completion:nil];
+  UINavigationController *viewController = [[UINavigationController alloc] initWithRootViewController:self.unsplashViewController];
+  viewController.modalPresentationStyle = UIModalPresentationFullScreen;
+
+  [self presentViewController:viewController animated:YES completion:nil];
+}
+```
+
+```
+#pragma mark - CPSUnsplashViewController Delegate Methods
+
+- (void)unsplashViewController:(CPSUnsplashViewController *)viewController didSelectImage:(UIImage *)image;
+{
+  // Use image that matches configured aspect ratio
+}
+
+- (void)unsplashViewController:(CPSUnsplashViewController *)viewController didSelectImageAttributionURL:(NSURL *)url;
+{
+  // Open image attribution URL, per Unsplash API terms, either in-app or kick out to Safari
+}
 ```
 
 ### Optional Configuration
