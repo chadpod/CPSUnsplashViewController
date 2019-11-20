@@ -35,7 +35,6 @@
 #import "NSDictionary+IGListDiffable.h"
 #import "DBSphereView.h"
 
-#define UD_MAX_IMAGES_PER_SECTION 3
 #define UD_IMAGES_PER_SECTION @"UD_IMAGES_PER_SECTION"
 
 @interface CPSUnsplashViewController () <UNTagsCollectionHeaderDelegate, CPSImageSectionControllerDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate>
@@ -66,8 +65,6 @@
 @property (nonatomic) NSUInteger totalPages;
 @property (nonatomic) NSMutableArray *searchResults;
 
-@property (nonatomic) NSUInteger imagesPerSection;
-
 @property (nonatomic) NSURLSessionDataTask *searchTask;
 
 @property (nonatomic) CPSConfigurationItem *filter;
@@ -88,6 +85,7 @@
     viewController.font = [UIFont systemFontOfSize:12.f];
     viewController.tintColor = [UIColor systemBlueColor];
     viewController.textColor = [UIColor lightGrayColor];
+    viewController.imagesPerRow = 3;
     viewController.delegate = delegate;
     
     return viewController;
@@ -107,10 +105,6 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     self.navigationItem.rightBarButtonItem.enabled = NO;
-    
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{UD_IMAGES_PER_SECTION : @(3)}];
-    
-    self.imagesPerSection = [[[NSUserDefaults standardUserDefaults] objectForKey:UD_IMAGES_PER_SECTION] unsignedIntegerValue];
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.dimsBackgroundDuringPresentation = NO;
@@ -415,7 +409,7 @@
         CPSImageSectionController *sectionController = [CPSImageSectionController new];
         sectionController.searchViewController = self;
         sectionController.imageItem = object;
-        sectionController.numberOfImagesPerSection = self.imagesPerSection;
+        sectionController.numberOfImagesPerSection = self.imagesPerRow;
         sectionController.thumbnailKeyPath = (self.view.bounds.size.width > 400 ? @"urls.small" :@"urls.thumb");
         sectionController.imageKeyPath = @"urls.regular";
         sectionController.attributionKeyPath = @"user.username";

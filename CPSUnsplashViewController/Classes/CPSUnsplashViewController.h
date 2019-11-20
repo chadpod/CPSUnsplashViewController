@@ -50,6 +50,7 @@
 @property (nonatomic) UIColor *tintColor;
 @property (nonatomic) UIColor *textColor;
 @property (nonatomic) UIColor *backgroundColor;
+@property (nonatomic) NSUInteger *imagesPerRow;
 @property (nonatomic) CGSize cropAspectRatio;
 @property (nonatomic) NSString *selectedImageId;
 
