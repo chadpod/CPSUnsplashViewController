@@ -307,12 +307,14 @@
 				"${PODS_ROOT}/Target Support Files/Pods-CPSUnsplashViewController_Example/Pods-CPSUnsplashViewController_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CPSUnsplashViewController/CPSUnsplashViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/DBSphereTagCloud/DBSphereTagCloud.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework",
 				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CPSUnsplashViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DBSphereTagCloud.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListDiffKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

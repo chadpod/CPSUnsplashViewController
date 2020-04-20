@@ -28,7 +28,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <IGListKit/IGListDiffable.h>
+#import <IGListDiffKit/IGListDiffKit.h>
 
 @interface NSDictionary (IGListDiffable) <IGListDiffable>
 
