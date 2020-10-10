@@ -203,7 +203,7 @@
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]])
+    if (gestureRecognizer == self.panGesture)
     {
         CGPoint translation = [(UIPanGestureRecognizer *)gestureRecognizer translationInView:self];
         return (fabs(translation.y) < 1.f); // && self.bounds.size.width == [UIScreen mainScreen].bounds.size.width);
